@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool lastNum(const string& binary) {
+    return binary[binary.length() - 1] == '0';
+}
+
+int main() {
+    string binary;
+    cout << "Введите число в двоичной системе счисления: ";
+    cin >> binary;
+    if (lastNum(binary)) {
+        cout << "Число четное" << endl;
+    } else {
+        cout << "Число нечетное" << endl;
+    }
+}
