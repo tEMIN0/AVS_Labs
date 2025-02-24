@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+void compareIEEE754(float num1, float num2) {
+    int* bin1 = reinterpret_cast<int*>(&num1);
+    int* bin2 = reinterpret_cast<int*>(&num2);
+
+    cout << "Число 1: " << num1 << " (в битах: " << hex << *bin1 << ")" << endl;
+    cout << "Число 2: " << num2 << " (в битах: " << hex << *bin2 << ")" << endl;
+
+    if (*bin1 == *bin2) {
+        cout << "Числа эквивалентны в IEEE 754." << endl;
+    } else {
+        cout << "Числа различны в IEEE 754." << endl;
+    }
+}
+
+int main() {
+    float num1, num2;
+    cout << "Введите два числа: ";
+    cin >> num1 >> num2;
+
+    compareIEEE754(num1, num2);
+    return 0;
+}
